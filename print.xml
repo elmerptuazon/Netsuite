@@ -1,0 +1,70 @@
+
+<pdf>
+  <head>
+    <macrolist>
+      <macro id="nlheader">
+        <img src="http://www.cloudcompasstech.com/wp-content/uploads/2016/10/Cloud-Compass-Logo-PNG.png" style="height:100px; width:200px;" />
+      </macro>
+      <macro id="nlfooter">
+        <center><p>Copyright&#169; All Rights Reserved 2018</p></center>
+      </macro>
+    </macrolist>
+    <style type="text/css">
+      body{
+        font-family:sans-serif;
+      }
+      th{
+        word-wrap: word-break;
+      }
+      #
+      th, td {
+        font-size: 10px;
+        padding: 15px;
+        text-align: left;
+        border: 5px solid #AA857F;
+        border-collapse: collapse;
+      }
+      img {
+        border-radius: 4px;  /* Rounded border */
+      }
+
+    </style>
+  </head>
+  <body header="nlheader" header-height="20%" footer="nlfooter" footer-height="20pt" padding="1cm 2cm 1cm 2cm" size="Letter">
+    <h5>${var.entity} on ${var.trandate}</h5>
+    <p>Greetings, ${var.entity}!</p>
+    <p>
+      The request for receipt has been processed. Please check information below for the detailed presentation of all your billings for ${var.entity} on ${var.trandate}.
+    </p>
+    <h5>SUMMARY</h5>
+    <table>
+      <tr>
+        <th>${var.subtotal@label}</th>
+        <td>${var.subtotal}</td>
+      </tr>
+      <tr>
+        <th>${var.discounttotal@label}</th>
+        <td>${var.discounttotal}</td>
+      </tr>
+      <tr>
+        <th>${var.altshippingcost@label}</th>
+        <td>${var.altshippingcost}</td>
+      </tr>
+      <tr>
+        <th>${var.total@label}</th>
+        <td>${var.total}</td>
+      </tr>
+      <tr>
+        <th>${var.amountremainingtotalbox@label}</th>
+        <td>${var.amountremainingtotalbox}</td>
+      </tr>
+    </table>
+    <p>If you have any concerns about this receipt. Please contact our help support.</p>
+    <p><i>Mobile:</i> <a href="#">+63 1234 567 8901</a></p>
+    <p><i>Landline:</i> <a href="#">(02) 714 67 05)</a></p>
+    <br></br>
+    <p>Company: <i>CloudCompass Inc.</i></p>
+    <p>Address: <i>2608 Goldland Millenia Suites Pasig City</i></p>
+    <p>Contact Info: <i>+63 926 111 1111</i></p>
+  </body>
+</pdf>
