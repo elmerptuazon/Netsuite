@@ -6,18 +6,22 @@
         <img src="http://www.cloudcompasstech.com/wp-content/uploads/2016/10/Cloud-Compass-Logo-PNG.png" style="height:100px; width:200px;" />
       </macro>
       <macro id="nlfooter">
-        <p>Copyright&#169; All Rights Reserved 2018</p>
-        <img src="http://www.cloudcompasstech.com/wp-content/uploads/2016/10/Cloud-Compass-Logo-PNG.png" style="height:50px; width:50px; align:right; margin:-2cm" />
+        <table style="width:100%">
+          <tr>
+            <th align="left"><p>Copyright&#169; All Rights Reserved 2018</p></th>
+            <td align="center"><img src="http://www.cloudcompasstech.com/wp-content/uploads/2016/10/Cloud-Compass-Logo-PNG.png" style="height:50px; width:50px; align:right; margin:-2cm" /></td>
+          </tr>
+        </table>
       </macro>
     </macrolist>
     <style type="text/css">
       body{
         font-family:sans-serif;
       }
-      th{
+      th.bordered{
         word-wrap: word-break;
       }
-      th, td {
+      th.bordered, td.bordered {
         font-size: 10px;
         padding: 15px;
         text-align: left;
@@ -36,24 +40,24 @@
     <h5>SUMMARY</h5>
     <table>
       <tr>
-        <th>${var.subtotal@label}</th>
-        <td>${var.subtotal}</td>
+        <th class="bordered">${var.subtotal@label}</th>
+        <td class="bordered">${var.subtotal}</td>
       </tr>
       <tr>
-        <th>${var.discounttotal@label}</th>
-        <td>${var.discounttotal}</td>
+        <th class="bordered">${var.discounttotal@label}</th>
+        <td class="bordered">${var.discounttotal}</td>
       </tr>
       <tr>
-        <th>${var.altshippingcost@label}</th>
-        <td>${var.altshippingcost}</td>
+        <th class="bordered">${var.altshippingcost@label}</th>
+        <td class="bordered">${var.altshippingcost}</td>
       </tr>
       <tr>
-        <th>${var.total@label}</th>
-        <td>${var.total}</td>
+        <th class="bordered">${var.total@label}</th>
+        <td class="bordered">${var.total}</td>
       </tr>
       <tr>
-        <th>${var.amountremainingtotalbox@label}</th>
-        <td>${var.amountremainingtotalbox}</td>
+        <th class="bordered">${var.amountremainingtotalbox@label}</th>
+        <td class="bordered">${var.amountremainingtotalbox}</td>
       </tr>
     </table>
     <p>If you have any concerns about this receipt. Please contact our help support.</p>
