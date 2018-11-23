@@ -6,7 +6,8 @@
         <img src="http://www.cloudcompasstech.com/wp-content/uploads/2016/10/Cloud-Compass-Logo-PNG.png" style="height:100px; width:200px;" />
       </macro>
       <macro id="nlfooter">
-        <center><p>Copyright&#169; All Rights Reserved 2018</p></center>
+        <p>Copyright&#169; All Rights Reserved 2018</p>
+        <img src="http://www.cloudcompasstech.com/wp-content/uploads/2016/10/Cloud-Compass-Logo-PNG.png" style="height:50px; width:50px; align:right; margin:-2cm" />
       </macro>
     </macrolist>
     <style type="text/css">
@@ -16,16 +17,12 @@
       th{
         word-wrap: word-break;
       }
-      #
       th, td {
         font-size: 10px;
         padding: 15px;
         text-align: left;
-        border: 5px solid #AA857F;
+        border: 1px solid #AA857F;
         border-collapse: collapse;
-      }
-      img {
-        border-radius: 4px;  /* Rounded border */
       }
 
     </style>
@@ -33,7 +30,7 @@
   <body header="nlheader" header-height="20%" footer="nlfooter" footer-height="20pt" padding="1cm 2cm 1cm 2cm" size="Letter">
     <h5>${var.entity} on ${var.trandate}</h5>
     <p>Greetings, ${var.entity}!</p>
-    <p>
+    <p style="text-indent:50px;">
       The request for receipt has been processed. Please check information below for the detailed presentation of all your billings for ${var.entity} on ${var.trandate}.
     </p>
     <h5>SUMMARY</h5>
