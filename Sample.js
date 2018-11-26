@@ -62,6 +62,8 @@ function form(request , response) {
 					formsublist.setLineItemValue('statusid',i, record[i].getValue('externalid'));
 					formsublist.setLineItemValue('startdateid',i, record[i].getValue('trandate'));
 					formsublist.setLineItemValue('enddateid',i, record[i].getValue('trandate'));
+
+					
 				}
 			}
 		response.writePage(form);
