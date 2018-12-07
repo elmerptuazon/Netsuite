@@ -1,29 +1,19 @@
-function firstOccurence(type) {
-	if(type == 'scheduled') {
-		var filters = [
-		new nlobjSearchFilter('trandate', null, 'onorafter', 'threeDaysAgo'),
-		new nlobjSearchFilter('trandate', null, 'onorbefore', 'today')
-		];
-		var col = [new nlobjSearchColumn('trandate')];
-		var searchResults = nlapiSearchRecord('salesorder', null, filters, col);
-		for ( var i = 1; searchResults != null && i <= searchResults.length; i++ )  {
-			var newRecord = nlapiCreateRecord('salesorder', {entity: i});
-			nlapiSubmitRecord(newRecord);
-		}
-	}
+function scheduledScript(type) {
+	var date = new Date();
+	var dateFormat = nlapiDateToString(date, 'MM/DD/YYYY');
+	var newRecord = nlapiCreateRecord('salesorder');
+	newRecord.setFieldValue('entity', '2319');//id of the salesorder customer
+	newRecord.setFieldValue('trandate', dateFormat);
+	newRecord.setFieldValue('class', '7')
+	//access existing sublist
+	newRecord.selectNewLineItem('item');//default selection on sublist
+
+	newRecord.setCurrentLineItemValue('item', 'item', '13');//id of item selected
+	newRecord.setCurrentLineItemValue('item', 'quantity', '10');
+	newRecord.setCurrentLineItemValue('item', 'price', '-1');
+	newRecord.setCurrentLineItemValue('item', 'rate', '12.00');
+
+	newRecord.commitLineItem('item');
+	nlapiSubmitRecord(newRecord);
 }
 
-function secondOccurence(type) {
-	if(type == 'scheduled') {
-		var filters = [
-		new nlobjSearchFilter('trandate', null, 'onorafter', 'twoDaysAgo'),
-		new nlobjSearchFilter('trandate', null, 'onorbefore', 'today')
-		];
-		var col = [new nlobjSearchColumn('trandate')];
-		var searchResults = nlapiSearchRecord('salesorder', null, filters, col);
-		for ( var i = 1; searchResults != null && i <= searchResults.length; i++ )  {
-			var newRecord = nlapiCreateRecord('salesorder', {entity: i});
-			nlapiSubmitRecord(newRecord);
-		}
-	}
-}
